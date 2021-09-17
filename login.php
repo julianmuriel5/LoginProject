@@ -10,7 +10,12 @@
 </head>
 <body>
 
+    <header>
+         <a href="index.php">Sistema de remitos</a>
+    </header>
+
     <h1>Login</h1>
+    <span>o <a href="crearuser.php">Registrarse</a></span>
      <form action="login.php" method="post">
          <input type="text" name="user"  placeholder="ingresar usuario">
          <input type="password" name="password" placeholder="ingresar contraseña">
