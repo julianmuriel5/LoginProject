@@ -1,6 +1,28 @@
+<?php
+
+  require 'conexionBD.php';
+
+  $message = '';
+
+  if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email', $_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $stmt->bindParam(':password', $password);
+
+    if ($stmt->execute()) {
+      $message = 'Nuevo usuario creado con éxito';
+    } else {
+      $message = 'Lo sentimos, debe haber un problema al crear su cuenta.';
+    }
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +31,25 @@
      <link rel="stylesheet" href="style.css">
      
 
-</head>
-<body>
+ </head>
+ <body>
 
     <header>
         <a href="index.php">Sistema de remitos</a>
     </header>
+     
+    <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?> 
 
     <h1>Crear usuario</h1>
     <span>o <a href="login.php">Login</a></span>
 
     <form action="crearuser.php" method="post">
-         <input type="text" name="user"  placeholder="ingresar usuario">
+         <input type="text" name="email"  placeholder="ingresar usuario">
          <input type="password" name="password" placeholder="ingresar contraseña">
          <input type="password" name="Confirmar Contraseña" placeholder="Confirmar Contraseña">
          <input type="submit" value="Send">
 
-</body>
+ </body>
 </html>
