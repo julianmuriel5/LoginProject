@@ -1,6 +1,6 @@
 <?php
 
-  require 'conexionBD.php';
+  require 'database.php';
 
   $message = '';
 
@@ -34,9 +34,7 @@
  </head>
  <body>
 
-    <header>
-        <a href="index.php">Sistema de remitos</a>
-    </header>
+ <?php require 'partials/header.php' ?>
      
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
@@ -45,7 +43,7 @@
     <h1>Crear usuario</h1>
     <span>o <a href="login.php">Login</a></span>
 
-    <form action="crearuser.php" method="post">
+    <form action="signup.php" method="post">
          <input type="text" name="email"  placeholder="ingresar usuario">
          <input type="password" name="password" placeholder="ingresar contraseña">
          <input type="password" name="Confirmar Contraseña" placeholder="Confirmar Contraseña">
