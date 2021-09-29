@@ -1,3 +1,22 @@
+<?php
+  session_start();
+
+  require 'conexionBD.php';
+
+  if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user = null;
+
+    if (count($results) > 0) {
+      $user = $results;
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +28,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Bienvenido</h1>
-    <h2>Por favor ingrese su usuario o registrese</h2>
-    <a href="login.php">Ingresar</a> o 
-    <a href="crearuser.php">Crear usuario</a>
-</body>
+    <header>
+         <a href="index.php">Sistema de remitos</a>
+    </header>
+
+    <?php if(!empty($user)): ?>
+      <br> Bienvenido <?= $user['email']; ?>
+      <br>You are Successfully Logged In
+      <a href="logout.php">
+        Logout
+      </a>
+    <?php else: ?>
+        <h1>Bienvenido</h1>
+      <h2>Por favor regristrarse o ingresar</h2>
+
+      <a href="login.php">Ingresar</a> o
+      <a href="crearuser.php">Registrarse</a>
+    <?php endif; ?>
+  </body>
 </html>
