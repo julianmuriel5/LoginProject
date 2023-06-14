@@ -41,7 +41,7 @@
     <?php endif; ?>
 
     <h1>Login</h1>
-    <span>or <a href="signup.php">SignUp</a></span>
+    <span>or <a href="signup.php">SignnigUp</a></span>
 
     <form action="login.php" method="POST">
       <input name="email" type="text" placeholder="Ingresa tu Mail">
