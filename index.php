@@ -29,7 +29,7 @@
     <?php require 'partials/header.php' ?>
 
     <?php if(!empty($user)): ?>
-      <br> Welcome. <?= $user['email']; ?>
+      <br> Bienvenido <?= $user['email']; ?>
       <br>You are Successfully Logged In
       <a href="logout.php">
         Logout
