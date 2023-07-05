@@ -40,8 +40,8 @@
       <p> <?= $message ?></p>
     <?php endif; ?>
 
-    <h1>Login</h1>
-    <span>or <a href="signup.php">SigUp</a></span>
+    <h1>Ingresar</h1>
+    <span>o <a href="signup.php">Registrarse</a></span>
 
     <form action="login.php" method="POST">
       <input name="email" type="text" placeholder="Ingresa tu Mail">

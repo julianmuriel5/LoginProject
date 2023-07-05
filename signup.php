@@ -41,7 +41,7 @@
     <?php endif; ?> 
 
     <h1>Crear usuario</h1>
-    <span>o <a href="login.php">Login</a></span>
+    <span>o <a href="login.php">Ingresar</a></span>
 
     <form action="signup.php" method="post">
          <input type="text" name="email"  placeholder="ingresar usuario">
