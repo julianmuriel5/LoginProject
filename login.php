@@ -46,7 +46,7 @@
     <form action="login.php" method="POST">
       <input name="email" type="text" placeholder="Ingresa tu Mail">
       <input name="password" type="password" placeholder="Ingresa tu contraseña">
-      <input type="submit" value="submit">
+      <input type="submit" value="Ingresar">
     </form>
   </body>
 </html>
