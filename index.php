@@ -30,7 +30,7 @@
 
     <?php if(!empty($user)): ?>
       <br> Bienvenido <?= $user['email']; ?>
-      <br>You are Successfully Logged In
+      <br> Has ingresado exitosamente
       <a href="logout.php">
         Logout
       </a>
