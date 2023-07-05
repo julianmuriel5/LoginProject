@@ -37,7 +37,7 @@
     <?php else: ?>
       <h1>Por favor Ingresa o Registrate</h1>
 
-      <a href="login.php">Ingresar</a> or
+      <a href="login.php">Ingresar</a> o
       <a href="signup.php">Registrarse</a>
     <?php endif; ?>
   </body>
