@@ -7,9 +7,9 @@
 
 
     try {
-    $conn = new PDO ("mysql:host=$server;$database=tecnocut;",$username, $password);
+    $conn = new PDO ("mysql:host=$server;$dbname=database;",$username, $password);
     } catch (PDOexception $e) {
-      die('connect failed: '.$e->getMessage());
+      die('connected failed: '.$e->getMessage());
     }
 ?>
 

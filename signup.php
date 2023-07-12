@@ -5,7 +5,7 @@
   $message = '';
 
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
+    $sql = "INSERT INTO ingreso (email, password) VALUES (:email, :password)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':email', $_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -14,7 +14,7 @@
     if ($stmt->execute()) {
       $message = 'Nuevo usuario creado con éxito';
     } else {
-      $message = 'Lo sentimos, debe haber un problema al crear su cuenta.';
+      $message = 'Lo sentimos, ocurrio un error al crear su usuario.';
     }
   }
 ?>
