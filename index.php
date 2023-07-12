@@ -35,7 +35,7 @@
         Logout
       </a>
     <?php else: ?>
-      <h1>Por favor Ingresa o Registrate</h1>
+      <h1>Por favor, Ingresa o Registrate</h1>
 
       <a href="login.php">Ingresar</a> o
       <a href="signup.php">Registrarse</a>
