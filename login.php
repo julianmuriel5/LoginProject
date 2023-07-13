@@ -17,9 +17,9 @@
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['user_id'] = $results['id'];
-      header("Location: /Loginsist");
+      header("Location: /Loginproject");
     } else {
-      $message = 'Lo siento, esas credenciales no coinciden';
+      $message = 'Lo siento, cuenta inexistente';
     }
   }
 
